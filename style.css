@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root{
+    --font-colour: #DDE6ED;
+    --primary-colour: #27374D;
+    --secondary-colour: #526D82;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Roboto', sans-serif;  
+    width: 100%;
+    margin: 0;
+    background-color: var(--primary-colour);
+    color: var(--font-colour);
+}
+
+header{
+    background-color: var(--secondary-colour);
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+input{
+    border: 2px solid var(--primary-colour);
+    border-radius: 50px;
+    padding: 10px;
+    background-color: var(--secondary-colour);
+    color: var(--font-colour);
+}
+
+input:focus{
+    outline: none;
+}
+
+input::placeholder{
+    color: var(--font-colour);
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.movie{
+    position: relative;
+    overflow: hidden;
+    background-color: var(--secondary-colour);
+    width: 240px;
+    margin: 50px;
+}
+
+.movie img{
+    max-width: 100%;
+}
+
+.movie .movieinfo{
+    display: flex;
+    margin: 0px 10px;
+    justify-content: space-between;
+}
+
+.movie .movieinfo .rating{
+    background-color: var(--primary-colour);
+    padding: 5px;
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.movie .movieinfo .rating.green{
+    color: #CBFFA9;
+}
+.movie .movieinfo .rating.orange{
+    color: #FFA41B;
+}
+
+.movie .movieinfo .rating.red{
+    color: #B31312;
+}
+
+.overview{
+    position: absolute;
+    padding: 5px;
+    background-color: var(--font-colour);
+    color: var(--secondary-colour);
+    transform: translateY(101%);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: transform 0.3s ease-in;
+}
+
+.movie:hover .overview{
+    transform: translateY(0);
+}
